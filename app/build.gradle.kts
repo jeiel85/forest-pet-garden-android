@@ -68,6 +68,26 @@ abstract class ExportReleaseToDesktopTask : DefaultTask() {
       )
     }
 
+    // Play Console hard limit: 500 Unicode chars per locale block (excluding tags).
+    // Over-limit text is silently truncated by Play Console — abort the export
+    // instead of letting a bad file reach the desktop.
+    val localePattern = Regex("<(ko-KR|en-US|ja-JP|zh-CN|zh-TW)>([\\s\\S]*?)</\\1>")
+    val violations = mutableListOf<String>()
+    for (match in localePattern.findAll(releaseNotesText)) {
+      val locale = match.groupValues[1]
+      val body = match.groupValues[2].trim()
+      logger.lifecycle("  release notes $locale: ${body.length} / 500")
+      if (body.length > 500) {
+        violations += "$locale (${body.length} chars, ${body.length - 500} over)"
+      }
+    }
+    if (violations.isNotEmpty()) {
+      throw GradleException(
+        "Play Console release notes exceed the 500-character limit per locale: " +
+          violations.joinToString(", ") + ". Trim before exporting."
+      )
+    }
+
     val baseName = "ForestPetGarden-v${versionName.get()}-vc${versionCode.get()}"
     val aabTarget = File(buildDir, "$baseName.aab")
     val txtTarget = File(buildDir, "$baseName-release-notes.txt")
