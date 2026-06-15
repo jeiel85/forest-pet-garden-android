@@ -1,6 +1,0 @@
-{
-  "name": "숲속 펫 정원",
-  "description": "아기자기하고 보송보송한 가상 반려동물들을 입양하여 밥을 먹이고, 놀아주며, 한적한 소나무 숲속 탐험 소풍을 통해 귀여운 보물을 발굴해나가는 평화로운 오프라인 펫 가든 육성 시뮬레이션 게임입니다.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

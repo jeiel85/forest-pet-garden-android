@@ -16,3 +16,8 @@
 local.properties
 .env
 debug.keystore
+
+# Keystores and signing
+.keystore/
+*.jks
+*.keystore
