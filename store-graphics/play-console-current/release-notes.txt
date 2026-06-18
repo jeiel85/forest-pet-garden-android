@@ -1,12 +1,6 @@
 <ko-KR>
-- 숲속 펫 정원 프로젝트 첫 번째 빌드 출시
-- 아기 여우 '아라', 잠꾸러기 코알라 등 귀여운 가상 펫 8종 입양 기능 추가
-- 안개 낀 소나무 숲속 탐험 소풍 및 미스테리 보물 상자 발굴 시스템 구현
-- 오프라인 단독 플레이 완벽 지원
+- 시스템 안정성 개선 및 버그 수정
 </ko-KR>
 <en-US>
-- Initial release of the Forest Pet Garden project
-- Adopt 8 cozy virtual pets including Ara the baby fox and a sleepy koala
-- Embark on adventures in the misty pine forest to dig up hidden cute treasures
-- Fully playable offline
+- System stability improvements and bug fixes
 </en-US>
